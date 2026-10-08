@@ -1,0 +1,4 @@
+{
+  "install": "npm install --registry https://registry.npmjs.org",
+  "start": "bash .cursor/start-dev.sh"
+}

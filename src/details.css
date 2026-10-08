@@ -1,0 +1,369 @@
+.details-scroll {
+  scrollbar-width: none;
+}
+
+.details-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.details-hscroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.details-hscroll::-webkit-scrollbar {
+  display: none;
+}
+
+.details-strike {
+  position: relative;
+}
+
+.details-strike::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: #757575;
+}
+
+.details-rating-ring {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: conic-gradient(#8ce99a var(--ring-pct), #2a2a2a var(--ring-pct));
+}
+
+.details-rating-ring-inner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1e1e1e;
+  display: grid;
+  place-items: center;
+}
+
+.ask-sid-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  background: #121212;
+  padding: 32px 20px 0;
+}
+
+.ask-sid-section__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.ask-sid-section__grid {
+  display: block;
+  width: 366px;
+  height: 48px;
+  margin-top: 40px;
+  margin-left: -6px;
+  object-fit: cover;
+  object-position: bottom;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.ask-sid-field-wrap {
+  position: relative;
+  width: 320px;
+  min-height: 48px;
+}
+
+.ask-sid-glow,
+.ask-sid-field__inner-glow {
+  offset-path: path("M 16 1 H 304 A 15 15 0 0 1 319 16 V 32 A 15 15 0 0 1 304 47 H 16 A 15 15 0 0 1 1 32 V 16 A 15 15 0 0 1 16 1 Z");
+  offset-rotate: 0deg;
+  animation: ask-sid-glow-travel 4.5s linear infinite;
+  pointer-events: none;
+}
+
+.ask-sid-glow {
+  position: absolute;
+  z-index: 0;
+  width: 220px;
+  height: 96px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(88, 250, 147, 0.28) 0%,
+    rgba(46, 160, 96, 0.16) 42%,
+    rgba(46, 160, 96, 0.05) 68%,
+    transparent 78%
+  );
+  filter: blur(22px);
+  opacity: 0.85;
+}
+
+.ask-sid-field {
+  position: relative;
+  z-index: 1;
+  min-height: 48px;
+  height: auto;
+  width: 320px;
+  padding: 1.5px;
+  border: 0;
+  border-radius: 16px;
+  corner-shape: squircle;
+  background: transparent;
+  text-align: left;
+  overflow: hidden;
+  cursor: text;
+}
+
+.ask-sid-field__spin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 420px;
+  height: 420px;
+  translate: -50% -50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(88, 250, 147, 0) 0deg,
+    rgba(88, 250, 147, 0) 230deg,
+    rgba(46, 160, 96, 0.35) 280deg,
+    rgba(88, 250, 147, 0.7) 320deg,
+    rgba(88, 250, 147, 0.45) 345deg,
+    rgba(88, 250, 147, 0) 360deg
+  );
+  animation: ask-sid-border-rotate 4.5s linear infinite;
+}
+
+.ask-sid-field__face {
+  position: relative;
+  z-index: 1;
+  display: block;
+  min-height: 45px;
+  height: auto;
+  overflow: hidden;
+  border-radius: 14.5px;
+  corner-shape: squircle;
+  background: #000;
+}
+
+.ask-sid-field__composer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 45px;
+  padding: 9px 8px 8px;
+}
+
+.ask-sid-composer-text {
+  position: relative;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.ask-sid-input {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  background: transparent;
+  color: #fff;
+  font-family: "Euclid Circular B", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  caret-color: #fff;
+}
+
+.ask-sid-field--has-text .ask-sid-input {
+  padding-right: 32px;
+}
+
+.ask-sid-send {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #1baf71;
+  color: #fff;
+  cursor: pointer;
+}
+
+.ask-sid-logo {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 18px;
+  flex: none;
+}
+
+.ask-sid-logo__glow {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ask-sid-logo__shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 36%,
+    rgba(88, 250, 147, 0.15) 46%,
+    #8dffc0 50%,
+    rgba(88, 250, 147, 0.15) 54%,
+    transparent 64%,
+    transparent 100%
+  );
+  background-size: 220% 100%;
+  background-repeat: no-repeat;
+  animation: ask-sid-logo-shine 2.4s ease-in-out infinite;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  pointer-events: none;
+}
+
+@keyframes ask-sid-logo-shine {
+  from {
+    background-position: 130% 0;
+  }
+
+  to {
+    background-position: -30% 0;
+  }
+}
+
+.ask-sid-chip {
+  position: relative;
+  display: flex;
+  height: 32px;
+  shrink: 0;
+  align-items: center;
+  gap: 5px;
+  border-radius: 12px;
+  background: rgba(64, 64, 64, 0.2);
+  padding: 0 8px;
+}
+
+.ask-sid-phrase {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  transform: translateY(-50%);
+  overflow: hidden;
+  color: #a6a6a6;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.ask-sid-caret {
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  margin-left: 1px;
+  background: #a6a6a6;
+  vertical-align: -1px;
+  animation: ask-sid-caret 1s steps(1) infinite;
+}
+
+@keyframes ask-sid-caret {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.ask-sid-field__inner-glow {
+  position: absolute;
+  z-index: 0;
+  width: 240px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(88, 250, 147, 0.18) 0%,
+    rgba(46, 160, 96, 0.08) 46%,
+    transparent 74%
+  );
+  filter: blur(18px);
+}
+
+@keyframes ask-sid-border-rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes ask-sid-glow-travel {
+  from {
+    offset-distance: 20%;
+  }
+
+  to {
+    offset-distance: 120%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ask-sid-field__spin {
+    animation: none;
+    background: #58fa93;
+  }
+
+  .ask-sid-glow,
+  .ask-sid-field__inner-glow {
+    animation: none;
+    offset-distance: 20%;
+  }
+
+  .ask-sid-caret {
+    animation: none;
+    opacity: 0;
+  }
+
+  .ask-sid-logo__shine {
+    animation: none;
+    opacity: 0;
+  }
+}

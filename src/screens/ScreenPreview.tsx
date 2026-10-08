@@ -37,6 +37,8 @@ function ScreenContent({ screenId }: { screenId: ScreenId }) {
       return <AckoDriveIntroSplashScreen />;
     case "main":
       return <AckoDriveSplashScreen />;
+    case "details":
+      return <AckoDriveCarDetailsScreen />;
   }
 }
 

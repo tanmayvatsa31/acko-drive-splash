@@ -23,15 +23,44 @@
   cursor: not-allowed;
 }
 
+.acko-btn--primary {
+  background: #ffffff;
+  color: #121212;
+}
+
 .acko-btn--secondary {
   background: #ffffff;
   color: #121212;
+}
+
+.acko-btn--outline {
+  background: #ffffff;
+  color: #121212;
+  border: 1px solid #121212;
+}
+
+.acko-btn--dark {
+  background: #121212;
+  color: #ffffff;
+  border: 1px solid #121212;
+}
+
+.acko-btn--ghost {
+  background: transparent;
+  color: inherit;
 }
 
 .acko-btn--lg {
   min-height: 48px;
   padding: 12px 16px;
   font-size: 16px;
+}
+
+.acko-btn--sm {
+  min-height: 40px;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .acko-btn--full {
@@ -43,9 +72,64 @@
   font-family: "Euclid Circular B", system-ui, sans-serif;
 }
 
+.acko-typography--heading-md {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+}
+
+.acko-typography--heading-sm {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+}
+
+.acko-typography--heading-xs {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.acko-typography--heading-xxs {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+}
+
+.acko-typography--label-md {
+  font-size: 16px;
+  line-height: 24px;
+}
+
 .acko-typography--label-sm {
   font-size: 14px;
   line-height: 20px;
+}
+
+.acko-typography--label-xs {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.acko-typography--label-xxs {
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.acko-typography--body-sm {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.acko-typography--body-xs {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.acko-typography--weight-regular {
+  font-weight: 400;
 }
 
 .acko-typography--weight-medium {
@@ -58,4 +142,44 @@
 
 .acko-typography--invert {
   color: var(--color-text-invert);
+}
+
+.acko-typography--primary {
+  color: var(--color-text-primary);
+}
+
+.acko-typography--secondary {
+  color: var(--color-text-secondary);
+}
+
+.acko-typography--tertiary {
+  color: var(--color-text-tertiary);
+}
+
+.acko-typography--disabled {
+  color: var(--color-text-disabled);
+}
+
+.acko-typography--success {
+  color: var(--color-success);
+}
+
+.acko-typography--hyperlink {
+  color: var(--color-hyperlink);
+}
+
+.acko-typography--purple {
+  color: var(--color-purple);
+}
+
+.acko-typography--maroon {
+  color: var(--color-maroon);
+}
+
+.acko-typography--danger {
+  color: var(--color-danger);
+}
+
+.acko-typography--navy {
+  color: var(--color-navy);
 }
