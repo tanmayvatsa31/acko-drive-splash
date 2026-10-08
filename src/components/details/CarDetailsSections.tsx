@@ -548,7 +548,7 @@ export function AskSidSection({ onAsk }: { onAsk: (query: string) => void }) {
   return (
     <section className="ask-sid-section">
       <div className="ask-sid-section__content">
-        <Typography variant="heading-xs" weight="semibold" color="invert" className="w-full text-left">
+        <Typography variant="heading-xs" weight="semibold" color="invert" className="w-full text-center">
           Looking for more details about{" "}
           <span className="whitespace-nowrap">{ASK_SID_CAR}?</span>
         </Typography>
