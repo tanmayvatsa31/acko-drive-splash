@@ -72,7 +72,7 @@
 .ask-sid-section__grid {
   display: block;
   width: 366px;
-  height: 96px;
+  height: 74px;
   margin-top: 40px;
   margin-left: -6px;
   object-fit: cover;
@@ -166,7 +166,7 @@
   align-items: center;
   gap: 8px;
   min-height: 45px;
-  padding: 8px;
+  padding: 9px 8px 8px;
 }
 
 .ask-sid-composer-text {
