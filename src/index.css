@@ -34,6 +34,7 @@
 
 @import "./preview-stubs/tokens.css";
 @import "./preview-stubs/components.css";
+@import "./details.css";
 
 html,
 body,

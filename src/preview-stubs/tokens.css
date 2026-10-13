@@ -1,9 +1,21 @@
 :root {
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #a3a3a3;
+  --color-text-primary: #121212;
+  --color-text-secondary: #4b4b4b;
+  --color-text-tertiary: #757575;
+  --color-text-disabled: #a6a6a6;
   --color-text-invert: #ffffff;
   --color-surface: #121212;
+  --color-surface-white: #ffffff;
+  --color-surface-light: #f5f5f5;
   --color-card-elevated-bg: #ffffff;
+  --color-success: #0fa457;
+  --color-hyperlink: #1b73e8;
+  --color-purple: #5920c5;
+  --color-purple-500: #451999;
+  --color-maroon: #c2255c;
+  --color-danger: #95221d;
+  --color-navy: #0b3874;
+  --color-border-grey: #e8e8e8;
   --grey-800: #121212;
   --z-sticky: 100;
 }

@@ -1,0 +1,50 @@
+name: Publish GitHub Pages
+
+on:
+  push:
+    branches:
+      - cursor/acko-drive-car-details-b887
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm install --registry https://registry.npmjs.org
+
+      - name: Build
+        run: npx vite build --outDir dist-pages
+        env:
+          PAGES_BASE: /acko-drive-splash/
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist-pages
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
