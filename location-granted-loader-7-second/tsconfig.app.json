@@ -19,7 +19,10 @@
     "noUncheckedSideEffectImports": true,
     "baseUrl": ".",
     "paths": {
-      "@acko/typography": ["src/preview-stubs/typography.tsx"]
+      "@acko/button": ["src/acko/button.tsx"],
+      "@acko/typography": ["src/acko/typography.tsx"],
+      "@acko/tokens": ["src/acko/tokens.css"],
+      "@acko/css": ["src/acko"]
     }
   },
   "include": ["src"]

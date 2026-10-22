@@ -1,6 +1,5 @@
 import { Typography } from "@acko/typography";
-import { locationLoaderAssets as assets } from "../assets/locationLoaderAssets";
-import { loaderFrameClassName } from "../constants/loader";
+import { LocationPin } from "../components/LocationPin";
 
 export type LocationGrantedScreenProps = {
   locality?: string;
@@ -12,71 +11,46 @@ export function LocationGrantedScreen({
   address = "27th main road, Sector 2, HSR Layout, Bengaluru, Karnataka, 560102",
 }: LocationGrantedScreenProps) {
   return (
-    <div
-      className={loaderFrameClassName}
+    <main
+      className="ao-screen"
       data-name="Location Permission given"
       data-node-id="2218:22282"
       data-theme="light"
     >
-      <div
-        className="absolute top-1/2 left-1/2 flex w-[320px] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-[16px]"
-        data-node-id="2218:22283"
-      >
-        <div
-          className="relative size-[104px] shrink-0 overflow-clip"
-          data-name="Location"
-          data-node-id="2218:22284"
-        >
-          <div
-            className="absolute top-[9.87%] bottom-[10.13%] left-[calc(50%-0.36px)] w-[79.803px] -translate-x-1/2"
-            data-node-id="2218:22285"
-          >
-            <img
-              alt=""
-              className="absolute inset-0 block size-full max-w-none"
-              src={assets.pinGranted}
-            />
-          </div>
-        </div>
-
-        <div
-          className="relative flex w-full shrink-0 flex-col items-center gap-[12px] text-center break-words"
-          data-node-id="2218:22292"
-        >
+      <div className="ao-stack ao-stack--400 ao-stack--center">
+        <LocationPin state="granted" />
+        <div className="ao-stack ao-stack--300 ao-stack--center">
           <Typography
             as="p"
-            variant="body-sm"
+            variant="paragraph-small"
             weight="regular"
             color="tertiary"
-            className="w-[320px]"
+            align="center"
           >
             Your current location
           </Typography>
-          <div
-            className="relative flex w-full shrink-0 flex-col items-start gap-[8px]"
-            data-node-id="2218:22298"
-          >
+          <div className="ao-stack ao-stack--200 ao-stack--center">
             <Typography
-              as="p"
-              variant="heading-sm"
+              as="h1"
+              variant="heading-small"
               weight="semibold"
               color="primary"
-              className="w-full"
+              align="center"
             >
               {locality}
             </Typography>
             <Typography
               as="p"
-              variant="body-sm"
+              variant="paragraph-small"
               weight="regular"
               color="secondary"
-              className="w-full"
+              align="center"
             >
               {address}
             </Typography>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

@@ -1,0 +1,106 @@
+/**
+ * AO Design System type styles.
+ * Paragraph/Small and Heading/Small are bound in Figma on the
+ * Location Granted Loader screens.
+ */
+
+.acko-typography {
+  margin: 0;
+  font-family: var(--ao-font-family);
+  font-weight: 400;
+  color: var(--ao-text-primary);
+  text-wrap: pretty;
+}
+
+.acko-typography--paragraph-xs,
+.acko-typography--caption {
+  font-size: var(--ao-font-size-paragraph-xs);
+  line-height: var(--ao-line-height-paragraph-xs);
+}
+
+.acko-typography--paragraph-sm,
+.acko-typography--body-sm,
+.acko-typography--label-sm {
+  font-size: var(--ao-font-size-paragraph-sm);
+  line-height: var(--ao-line-height-paragraph-sm);
+}
+
+.acko-typography--paragraph-md,
+.acko-typography--body-md,
+.acko-typography--label-md {
+  font-size: var(--ao-font-size-paragraph-md);
+  line-height: var(--ao-line-height-paragraph-md);
+}
+
+.acko-typography--heading-xs {
+  font-size: var(--ao-font-size-heading-xs);
+  line-height: var(--ao-line-height-heading-xs);
+  font-weight: 600;
+}
+
+.acko-typography--heading-sm,
+.acko-typography--heading-small {
+  font-size: var(--ao-font-size-heading-sm);
+  line-height: var(--ao-line-height-heading-sm);
+  letter-spacing: var(--ao-letter-spacing-heading-sm);
+  font-weight: 600;
+}
+
+.acko-typography--heading-md {
+  font-size: var(--ao-font-size-heading-md);
+  line-height: var(--ao-line-height-heading-md);
+  font-weight: 700;
+}
+
+.acko-typography--display-lg {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+}
+
+.acko-typography--primary {
+  color: var(--ao-text-primary);
+}
+
+.acko-typography--secondary {
+  color: var(--ao-text-secondary);
+}
+
+.acko-typography--tertiary,
+.acko-typography--muted {
+  color: var(--ao-text-tertiary);
+}
+
+.acko-typography--invert {
+  color: var(--ao-text-invert);
+}
+
+.acko-typography--brand {
+  color: var(--ao-text-brand);
+}
+
+.acko-typography--regular {
+  font-weight: 400;
+}
+
+.acko-typography--weight-medium,
+.acko-typography--medium {
+  font-weight: 500;
+}
+
+.acko-typography--weight-semibold,
+.acko-typography--semibold {
+  font-weight: 600;
+}
+
+.acko-typography--bold {
+  font-weight: 700;
+}
+
+.acko-typography--center {
+  text-align: center;
+}
+
+.acko-typography--start {
+  text-align: start;
+}
