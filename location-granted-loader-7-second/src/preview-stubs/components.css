@@ -1,0 +1,39 @@
+.acko-typography {
+  margin: 0;
+  font-family: "Euclid Circular B", system-ui, sans-serif;
+}
+
+.acko-typography--body-sm {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.acko-typography--heading-sm {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+}
+
+.acko-typography--weight-regular {
+  font-weight: 400;
+}
+
+.acko-typography--weight-semibold {
+  font-weight: 600;
+}
+
+.acko-typography--primary {
+  color: var(--color-text-primary);
+}
+
+.acko-typography--secondary {
+  color: var(--color-text-secondary);
+}
+
+.acko-typography--tertiary,
+.acko-typography--muted {
+  color: var(--color-text-tertiary);
+}

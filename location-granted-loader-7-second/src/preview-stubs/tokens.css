@@ -1,0 +1,21 @@
+:root {
+  --color-text-primary: #121212;
+  --color-text-secondary: #4b4b4b;
+  --color-text-tertiary: #757575;
+  --color-text-invert: #ffffff;
+  --color-surface: #ffffff;
+  --color-card-elevated-bg: #ffffff;
+  --grey-300: #757575;
+  --grey-400: #4b4b4b;
+  --grey-600: #121212;
+  --z-sticky: 100;
+}
+
+[data-theme="light"] {
+  --color-text-primary: #121212;
+  --color-text-secondary: #4b4b4b;
+  --color-text-tertiary: #757575;
+  --color-text-invert: #ffffff;
+  --color-surface: #ffffff;
+  --color-card-elevated-bg: #ffffff;
+}
