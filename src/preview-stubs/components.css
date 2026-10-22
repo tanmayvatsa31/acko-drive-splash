@@ -43,9 +43,30 @@
   font-family: "Euclid Circular B", system-ui, sans-serif;
 }
 
-.acko-typography--label-sm {
+.acko-typography--label-sm,
+.acko-typography--body-sm {
   font-size: 14px;
   line-height: 20px;
+}
+
+.acko-typography--heading-sm {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+}
+
+.acko-typography--primary {
+  color: var(--color-text-primary);
+}
+
+.acko-typography--secondary {
+  color: var(--color-text-secondary);
+}
+
+.acko-typography--tertiary,
+.acko-typography--muted {
+  color: var(--color-text-tertiary, #757575);
 }
 
 .acko-typography--weight-medium {

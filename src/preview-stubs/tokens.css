@@ -10,9 +10,10 @@
 
 [data-theme="light"] {
   --color-text-primary: #121212;
-  --color-text-secondary: #6b6b6b;
+  --color-text-secondary: #4b4b4b;
+  --color-text-tertiary: #757575;
   --color-text-invert: #ffffff;
-  --color-surface: #f5f5f5;
+  --color-surface: #ffffff;
   --color-card-elevated-bg: #ffffff;
 }
 

@@ -1,15 +1,41 @@
 import { useEffect, useState } from "react";
 import { INTRO_SPLASH_VISIBLE_MS } from "../constants/introSplash";
+import { LOCATION_LOADER_VISIBLE_MS } from "../constants/loader";
 import { AckoDriveIntroSplashScreen } from "./AckoDriveIntroSplashScreen";
 import { AckoDriveSplashScreen } from "./AckoDriveSplashScreen";
+import { LocationGrantedScreen } from "./LocationGrantedScreen";
+import { SevenSecondLoaderScreen } from "./SevenSecondLoaderScreen";
 
-type ScreenId = "flow" | "intro" | "main";
+type ScreenId =
+  | "location-flow"
+  | "loader"
+  | "granted"
+  | "flow"
+  | "intro"
+  | "main";
 
 const SCREENS: { id: ScreenId; label: string }[] = [
-  { id: "flow", label: "Auto flow" },
+  { id: "location-flow", label: "Location 7s flow" },
+  { id: "loader", label: "Location loader" },
+  { id: "granted", label: "Location granted" },
+  { id: "flow", label: "Splash auto flow" },
   { id: "intro", label: "Intro splash" },
   { id: "main", label: "Main splash" },
 ];
+
+function LocationAutoFlowPreview() {
+  const [showGranted, setShowGranted] = useState(false);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setShowGranted(true);
+    }, LOCATION_LOADER_VISIBLE_MS);
+
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  return showGranted ? <LocationGrantedScreen /> : <SevenSecondLoaderScreen />;
+}
 
 function AutoFlowPreview() {
   const [showMainSplash, setShowMainSplash] = useState(false);
@@ -31,6 +57,12 @@ function AutoFlowPreview() {
 
 function ScreenContent({ screenId }: { screenId: ScreenId }) {
   switch (screenId) {
+    case "location-flow":
+      return <LocationAutoFlowPreview />;
+    case "loader":
+      return <SevenSecondLoaderScreen />;
+    case "granted":
+      return <LocationGrantedScreen />;
     case "flow":
       return <AutoFlowPreview />;
     case "intro":
@@ -40,8 +72,23 @@ function ScreenContent({ screenId }: { screenId: ScreenId }) {
   }
 }
 
+function initialScreen(): ScreenId {
+  const screen = new URLSearchParams(window.location.search).get("screen");
+  if (
+    screen === "location-flow" ||
+    screen === "loader" ||
+    screen === "granted" ||
+    screen === "flow" ||
+    screen === "intro" ||
+    screen === "main"
+  ) {
+    return screen;
+  }
+  return "location-flow";
+}
+
 export function ScreenPreview() {
-  const [activeScreen, setActiveScreen] = useState<ScreenId>("flow");
+  const [activeScreen, setActiveScreen] = useState<ScreenId>(initialScreen);
 
   return (
     <div className="min-h-dvh bg-[#0a0a0a]">
@@ -65,8 +112,8 @@ export function ScreenPreview() {
         ))}
       </nav>
 
-      <div className="flex min-h-dvh items-center justify-center px-16 py-24 pt-[56px]">
-        <ScreenContent screenId={activeScreen} />
+      <div className="flex min-h-dvh items-center justify-center px-16 py-24 pt-[72px]">
+        <ScreenContent key={activeScreen} screenId={activeScreen} />
       </div>
     </div>
   );
