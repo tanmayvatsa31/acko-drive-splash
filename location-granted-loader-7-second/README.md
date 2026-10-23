@@ -1,6 +1,6 @@
 # Location Granted Loader 7 Second
 
-ADSC New Booking Flow screens from Figma:
+Loader-only app for the ADSC New Booking Flow. This is **not** the ACKO Drive splash.
 
 - [7 Second Loader](https://www.figma.com/design/yMwMrWWlLlS1LkLAnAb5Vu/ADSC-New-Booking-Flow?node-id=2209-20662)
 - [Location Permission given](https://www.figma.com/design/yMwMrWWlLlS1LkLAnAb5Vu/ADSC-New-Booking-Flow?node-id=2218-22282)
@@ -8,25 +8,14 @@ ADSC New Booking Flow screens from Figma:
 ## Local preview
 
 ```bash
+git clone https://github.com/tanmayvatsa31/-Location-Granted-Loader-7-Second.git
+cd -- -Location-Granted-Loader-7-Second
 npm install --registry https://registry.npmjs.org
 npm run dev
 ```
 
-Open http://localhost:5173/
+Open the `Local: http://localhost:5173/` URL Vite prints.
 
-Preview tabs:
-
-- **Auto flow (7s)** — loader, then location granted after 7 seconds
-- **7 Second Loader** — white background, bouncing pin, “Finding your current location…”
-- **Location granted** — confirmed pin plus the HSR Layout address
-
-`@acko/typography` is aliased to a local preview stub. Restore the Nexus `@acko/*` packages when integrating into production.
-
-## Embed
-
-```tsx
-import { SevenSecondLoaderScreen } from "./screens/SevenSecondLoaderScreen";
-import { LocationGrantedScreen } from "./screens/LocationGrantedScreen";
-```
-
-`LocationGrantedScreen` accepts `locality` and `address` props for live GPS data.
+- `/` — loader for 7 seconds, then location granted
+- `/?screen=loader` — loader only
+- `/?screen=granted` — granted only
