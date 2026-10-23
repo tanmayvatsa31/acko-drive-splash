@@ -137,14 +137,14 @@
   position: absolute;
   inset: 0 24.48% 32.44% 20.07%;
   transform-origin: 50% 100%;
-  animation: ao-pin-bounce 1.05s ease-in-out infinite;
+  animation: ao-pin-bounce 0.8s ease-in-out infinite alternate;
   will-change: transform;
   backface-visibility: hidden;
 }
 
 .ao-location-pin--searching .ao-location-pin__ripple {
   transform-origin: 50% 50%;
-  animation: ao-pin-ripple 1.05s ease-in-out infinite;
+  animation: ao-pin-ripple 0.8s ease-in-out infinite alternate;
 }
 
 .ao-location-pin__granted {
@@ -157,43 +157,23 @@
 }
 
 @keyframes ao-pin-bounce {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
+  from {
+    transform: translate3d(0, -16px, 0);
   }
 
-  28% {
-    transform: translate3d(0, -18px, 0) scale(1);
-  }
-
-  44% {
-    transform: translate3d(0, 10px, 0) scale(1.06, 0.9);
-  }
-
-  58% {
-    transform: translate3d(0, -8px, 0) scale(1);
-  }
-
-  72% {
-    transform: translate3d(0, 4px, 0) scale(1.03, 0.96);
-  }
-
-  86% {
-    transform: translate3d(0, -2px, 0) scale(1);
+  to {
+    transform: translate3d(0, 10px, 0);
   }
 }
 
 @keyframes ao-pin-ripple {
-  0%,
-  28%,
-  100% {
-    transform: translateX(-50%) scale(0.92);
-    opacity: 0.7;
+  from {
+    transform: translateX(-50%) scale(0.94);
+    opacity: 0.75;
   }
 
-  44%,
-  72% {
-    transform: translateX(-50%) scale(1.08);
+  to {
+    transform: translateX(-50%) scale(1.06);
     opacity: 1;
   }
 }
