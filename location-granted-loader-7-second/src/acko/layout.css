@@ -136,15 +136,12 @@
 .ao-location-pin__marker {
   position: absolute;
   inset: 0 24.48% 32.44% 20.07%;
-  transform-origin: 50% 100%;
-  animation: ao-pin-bounce 0.8s ease-in-out infinite alternate;
   will-change: transform;
   backface-visibility: hidden;
 }
 
 .ao-location-pin--searching .ao-location-pin__ripple {
-  transform-origin: 50% 50%;
-  animation: ao-pin-ripple 0.8s ease-in-out infinite alternate;
+  will-change: transform, opacity;
 }
 
 .ao-location-pin__granted {
@@ -156,31 +153,3 @@
   transform: translateX(-50%);
 }
 
-@keyframes ao-pin-bounce {
-  from {
-    transform: translate3d(0, -16px, 0);
-  }
-
-  to {
-    transform: translate3d(0, 10px, 0);
-  }
-}
-
-@keyframes ao-pin-ripple {
-  from {
-    transform: translateX(-50%) scale(0.94);
-    opacity: 0.75;
-  }
-
-  to {
-    transform: translateX(-50%) scale(1.06);
-    opacity: 1;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ao-location-pin__marker,
-  .ao-location-pin--searching .ao-location-pin__ripple {
-    animation: none;
-  }
-}
