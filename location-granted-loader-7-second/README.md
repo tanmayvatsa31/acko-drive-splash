@@ -14,8 +14,8 @@ npm install --registry https://registry.npmjs.org
 npm run dev
 ```
 
-Open the `Local: http://localhost:5173/` URL Vite prints.
+Vite opens **http://localhost:5174/?screen=loader** (port 5174 so it does not collide with the splash app on 5173).
 
-- `/` — loader for 7 seconds, then location granted
-- `/?screen=loader` — loader only
-- `/?screen=granted` — granted only
+- http://localhost:5174/?screen=loader — loader only
+- http://localhost:5174/?screen=granted — location granted
+- http://localhost:5174/ — loader, then granted after 7s

@@ -18,7 +18,8 @@ export default defineConfig({
   },
   server: {
     host: true,
-    port: 5173,
-    open: "/",
+    port: 5174,
+    open: "/?screen=loader",
+    allowedHosts: true,
   },
 });
