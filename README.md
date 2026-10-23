@@ -1,31 +1,31 @@
-# ACKO Drive splash (Figma → ACKO DS)
+# Location Granted Loader 7 Second
 
-Implementation of **Splash Screen Iteration 1 Variant 68** from the [ACKO Drive ↔ ACKO App Figma file](https://www.figma.com/design/oFjLLGAd9RctdD4ql2hOn2/ACKO-Drive-%3C%3E-ACKO-App?node-id=16768-20951).
+This branch is the **location loader**, not the ACKO Drive splash.
+
+Figma:
+
+- [7 Second Loader](https://www.figma.com/design/yMwMrWWlLlS1LkLAnAb5Vu/ADSC-New-Booking-Flow?node-id=2209-20662)
+- [Location Permission given](https://www.figma.com/design/yMwMrWWlLlS1LkLAnAb5Vu/ADSC-New-Booking-Flow?node-id=2218-22282)
+
+Dedicated GitHub repo (empty until you push from your account):
+https://github.com/tanmayvatsa31/-Location-Granted-Loader-7-Second.git
 
 ## Local preview
 
-Two servers are available:
+`npm run dev` on this branch starts the loader on **port 5174**, so it does not collide with splash on 5173.
 
-| Command | URL | What you see |
-|---------|-----|--------------|
-| `npm run dev` | http://localhost:5173/ | React splash screens with preview tabs |
-| `npm run mockup` | http://127.0.0.1:4173/mockup.html | Static splash only |
-
-Install and run:
+| URL | What you see |
+|-----|----------------|
+| http://localhost:5174/?screen=loader | 7 second loader |
+| http://localhost:5174/?screen=granted | Location granted |
+| http://localhost:5174/ | Loader, then granted after 7s |
 
 ```bash
-cd /Users/tanmay.vatsa/acko-drive-splash
+git checkout cursor/location-granted-loader-c90a
 npm install --registry https://registry.npmjs.org
-npm run dev          # terminal 1
-npm run mockup       # terminal 2 (optional)
+npm run dev
 ```
 
-**Note:** `@acko/*` packages from Nexus are optional for this preview. Vite aliases `@acko/button` and `@acko/typography` to local preview stubs. Restore full ACKO packages from Nexus when integrating into production.
+Open the `Local: http://localhost:5174/` line Vite prints. That is this app. Figma / Amplitude / Supabase MCP tools do not host this preview.
 
-## Structure
-
-- `src/screens/AckoDriveSplashScreen.tsx` — screen UI (`@acko/button`, `@acko/typography`, semantic tokens)
-- `public/assets/acko-drive-splash/` — exported Figma imagery (photos, logo, arrows, glow)
-- `src/App.tsx` — renders the splash for local preview
-
-Wire `onClose` and `onFindNearbyCentre` to your app navigation when embedding this screen.
+`http://localhost:5173/` is the splash app if that server is still running. Do not use it for the loader.

@@ -1,0 +1,53 @@
+.acko-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+  font-family: var(--ao-font-family);
+  font-weight: 500;
+  line-height: 24px;
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+}
+
+.acko-btn:focus,
+.acko-btn:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.acko-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.acko-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.acko-btn--secondary {
+  background: var(--ao-white);
+  color: var(--ao-grey-600);
+}
+
+.acko-btn--lg {
+  min-height: 48px;
+  padding: var(--ao-space-300) var(--ao-space-400);
+  font-size: var(--ao-font-size-paragraph-md);
+}
+
+.acko-btn--full {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .acko-btn {
+    transition: none;
+  }
+
+  .acko-btn:active:not(:disabled) {
+    transform: none;
+  }
+}
