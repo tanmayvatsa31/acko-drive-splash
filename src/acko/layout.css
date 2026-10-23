@@ -1,7 +1,33 @@
 /**
  * ACKO layout primitives used by the location booking screens.
- * Full-bleed product surfaces — not a phone mockup on a dark canvas.
+ * Figma artboards are 360×800 mobile screens (nodes 2209:20662, 2218:22282).
  */
+
+.ao-device-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100dvh;
+  padding: var(--ao-space-600);
+  background: var(--ao-grey-100);
+}
+
+.ao-device {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 360px;
+  height: 800px;
+  overflow: hidden;
+  border: 1px solid var(--ao-border-default);
+  border-radius: 40px;
+  background: var(--ao-surface-white);
+  color: var(--ao-text-primary);
+}
 
 .ao-screen {
   position: relative;
@@ -10,11 +36,25 @@
   justify-content: center;
   box-sizing: border-box;
   width: 100%;
-  min-height: 100dvh;
+  height: 100%;
   padding: var(--ao-space-500);
   overflow: hidden;
   background: var(--ao-surface-white);
   color: var(--ao-text-primary);
+}
+
+@media (max-width: 400px) {
+  .ao-device-stage {
+    padding: 0;
+    background: var(--ao-surface-white);
+  }
+
+  .ao-device {
+    width: 100%;
+    height: 100dvh;
+    border: none;
+    border-radius: 0;
+  }
 }
 
 .ao-stack {
