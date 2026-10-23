@@ -136,6 +136,7 @@
 .ao-location-pin__marker {
   position: absolute;
   inset: 0 24.48% 32.44% 20.07%;
+  animation: none !important;
   will-change: transform;
   backface-visibility: hidden;
 }
