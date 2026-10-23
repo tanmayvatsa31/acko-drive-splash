@@ -101,17 +101,18 @@
 .ao-location-pin {
   position: relative;
   flex-shrink: 0;
-  overflow: hidden;
 }
 
 .ao-location-pin--searching {
   width: 156px;
-  height: 156px;
+  height: 176px;
+  overflow: visible;
 }
 
 .ao-location-pin--granted {
   width: 104px;
   height: 104px;
+  overflow: hidden;
 }
 
 .ao-location-pin__ripple {
@@ -135,9 +136,14 @@
 .ao-location-pin__marker {
   position: absolute;
   inset: 0 24.48% 32.44% 20.07%;
-  animation: ao-pin-bounce 0.9s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  transform-origin: 50% 100%;
+  animation: ao-pin-bounce 1.05s ease-in-out infinite;
   will-change: transform;
   backface-visibility: hidden;
+}
+
+.ao-location-pin--searching .ao-location-pin__ripple {
+  animation: ao-pin-ripple 1.05s ease-in-out infinite;
 }
 
 .ao-location-pin__granted {
@@ -152,16 +158,48 @@
 @keyframes ao-pin-bounce {
   0%,
   100% {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) scale(1);
   }
 
-  50% {
-    transform: translate3d(0, 14px, 0);
+  28% {
+    transform: translate3d(0, -18px, 0) scale(1);
+  }
+
+  44% {
+    transform: translate3d(0, 10px, 0) scale(1.06, 0.9);
+  }
+
+  58% {
+    transform: translate3d(0, -8px, 0) scale(1);
+  }
+
+  72% {
+    transform: translate3d(0, 4px, 0) scale(1.03, 0.96);
+  }
+
+  86% {
+    transform: translate3d(0, -2px, 0) scale(1);
+  }
+}
+
+@keyframes ao-pin-ripple {
+  0%,
+  28%,
+  100% {
+    transform: translateX(-50%) scale(0.92);
+    opacity: 0.7;
+  }
+
+  44%,
+  72% {
+    transform: translateX(-50%) scale(1.08);
+    opacity: 1;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ao-location-pin__marker {
+  .ao-location-pin__marker,
+  .ao-location-pin--searching .ao-location-pin__ripple {
     animation: none;
   }
 }
