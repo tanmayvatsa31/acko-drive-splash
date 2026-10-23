@@ -143,6 +143,7 @@
 }
 
 .ao-location-pin--searching .ao-location-pin__ripple {
+  transform-origin: 50% 50%;
   animation: ao-pin-ripple 1.05s ease-in-out infinite;
 }
 
