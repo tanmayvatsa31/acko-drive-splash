@@ -14,7 +14,7 @@ export function MobileScreen({ name, nodeId, children }: MobileScreenProps) {
         data-name={name}
         data-node-id={nodeId}
       >
-        {children}
+        <div className="ao-device__screen">{children}</div>
       </div>
     </div>
   );
