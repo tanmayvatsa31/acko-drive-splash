@@ -21,5 +21,8 @@ export default defineConfig({
     port: 5174,
     open: "/?screen=loader",
     allowedHosts: true,
+    hmr: {
+      overlay: false,
+    },
   },
 });
