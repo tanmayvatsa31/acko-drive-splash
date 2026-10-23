@@ -136,8 +136,12 @@
 .ao-location-pin__marker {
   position: absolute;
   inset: 0 24.48% 32.44% 20.07%;
-  animation: none !important;
-  will-change: transform;
+  transform-origin: 50% 100%;
+  animation: pinpoint-bounce 1.5s infinite;
+}
+
+.ao-location-pin--searching .ao-location-pin__ripple {
+  animation: pinpoint-ripple 1.5s infinite;
 }
 
 .ao-location-pin__granted {
@@ -147,6 +151,54 @@
   left: 50%;
   width: 79.803px;
   transform: translateX(-50%);
+}
+
+/*
+ * Classic map-pinpoint bounce (the 1.5s / 20px / 0%–50%–100% drop).
+ * Default `ease` pauses at the bottom; cosine also stops there and feels floaty.
+ * Ease-in on the fall + ease-out on the rise keeps impact at the bottom
+ * and zero velocity at the rest pose so the loop does not hitch.
+ */
+@keyframes pinpoint-bounce {
+  0% {
+    transform: translate3d(0, 0, 0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  50% {
+    transform: translate3d(0, 20px, 0);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes pinpoint-ripple {
+  0% {
+    transform: translateX(-50%) scale(0.92);
+    opacity: 0.7;
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  50% {
+    transform: translateX(-50%) scale(1.06);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  100% {
+    transform: translateX(-50%) scale(0.92);
+    opacity: 0.7;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ao-location-pin__marker,
+  .ao-location-pin--searching .ao-location-pin__ripple {
+    animation: none;
+  }
 }
 
 
