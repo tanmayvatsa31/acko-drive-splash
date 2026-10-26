@@ -16,9 +16,10 @@ https://github.com/tanmayvatsa31/-Location-Granted-Loader-7-Second.git
 
 | URL | What you see |
 |-----|----------------|
-| http://localhost:5174/?screen=loader | 7 second loader |
+| http://localhost:5174/ | 7 Second Loader (first screen) |
+| http://localhost:5174/?screen=loader | 7 Second Loader |
 | http://localhost:5174/?screen=granted | Location granted |
-| http://localhost:5174/ | Loader, then granted after 7s |
+| http://localhost:5174/?screen=flow | Loader, then granted after 7s |
 
 ```bash
 git checkout cursor/location-granted-loader-c90a

@@ -7,7 +7,7 @@ function screenFromSearch() {
   if (screen === "loader" || screen === "granted" || screen === "flow") {
     return screen;
   }
-  return "flow";
+  return "loader";
 }
 
 function App() {

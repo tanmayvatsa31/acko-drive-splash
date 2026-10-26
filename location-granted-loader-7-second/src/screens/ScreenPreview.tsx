@@ -10,7 +10,7 @@ function screenFromSearch(): ScreenId {
   if (screen === "loader" || screen === "granted" || screen === "flow") {
     return screen;
   }
-  return "flow";
+  return "loader";
 }
 
 function ScreenContent({ screenId }: { screenId: ScreenId }) {

@@ -20,11 +20,12 @@ export function LocationPin({ state }: LocationPinProps) {
   }
 
   return (
-    <div
-      className="ao-location-pin ao-location-pin--searching"
-      data-name="Location"
-      aria-hidden
-    >
+      <div
+        className="ao-location-pin ao-location-pin--searching"
+        data-name="Location"
+        data-node-id="2320:4878"
+        aria-hidden
+      >
       <div className="ao-location-pin__ripple">
         <img alt="" src={assets.pinRipple} />
       </div>

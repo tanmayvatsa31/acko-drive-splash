@@ -105,8 +105,8 @@
 
 .ao-location-pin--searching {
   width: 156px;
-  height: 176px;
-  overflow: visible;
+  height: 156px;
+  overflow: hidden;
 }
 
 .ao-location-pin--granted {
@@ -119,7 +119,7 @@
   position: absolute;
   top: 69.49%;
   bottom: 10.13%;
-  left: 50%;
+  left: calc(50% - 0.55px);
   width: 119.705px;
   transform: translateX(-50%);
 }

@@ -1,5 +1,4 @@
 import { Typography } from "@acko/typography";
-import { locationLoaderAssets as assets } from "../assets/locationLoaderAssets";
 import { LocationPin } from "../components/LocationPin";
 import { MobileScreen } from "../components/MobileScreen";
 
@@ -7,10 +6,6 @@ export function SevenSecondLoaderScreen() {
   return (
     <MobileScreen name="7 Second Loader" nodeId="2209:20662">
       <main className="ao-screen" aria-busy="true" aria-live="polite">
-        <div className="ao-location-glow" aria-hidden>
-          <img alt="" src={assets.glowEllipse} />
-        </div>
-
         <div className="ao-stack ao-stack--400 ao-stack--center">
           <LocationPin state="searching" />
           <div className="ao-stack ao-stack--300 ao-stack--center">
@@ -21,7 +16,7 @@ export function SevenSecondLoaderScreen() {
               color="secondary"
               align="center"
             >
-              Finding your current location...
+              Detecting your location...
             </Typography>
           </div>
         </div>

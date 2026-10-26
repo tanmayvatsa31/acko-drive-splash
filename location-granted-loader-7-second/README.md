@@ -14,8 +14,9 @@ npm install --registry https://registry.npmjs.org
 npm run dev
 ```
 
-Vite opens **http://localhost:5174/?screen=loader** (port 5174 so it does not collide with the splash app on 5173).
+Vite opens **http://localhost:5174/** (port 5174 so it does not collide with the splash app on 5173).
 
-- http://localhost:5174/?screen=loader — loader only
+- http://localhost:5174/ — 7 Second Loader (first screen)
+- http://localhost:5174/?screen=loader — 7 Second Loader
 - http://localhost:5174/?screen=granted — location granted
-- http://localhost:5174/ — loader, then granted after 7s
+- http://localhost:5174/?screen=flow — loader, then granted after 7s

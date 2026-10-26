@@ -44,7 +44,7 @@ function screenFromSearch(): ScreenId {
   ) {
     return screen;
   }
-  return "location-flow";
+  return "loader";
 }
 
 function ScreenContent({ screenId }: { screenId: ScreenId }) {
