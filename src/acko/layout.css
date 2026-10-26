@@ -1,0 +1,202 @@
+/**
+ * ACKO layout primitives used by the location booking screens.
+ * Figma artboards are 360×800 mobile screens (nodes 2209:20662, 2218:22282).
+ */
+
+.ao-device-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100dvh;
+  padding: var(--ao-space-600);
+  background: var(--ao-grey-200);
+}
+
+.ao-device {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  width: 360px;
+  height: 800px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 24px;
+  background: var(--ao-surface-white);
+  color: var(--ao-text-primary);
+}
+
+.ao-device__screen {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 0;
+  background: var(--ao-surface-white);
+}
+
+.ao-screen {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: var(--ao-space-500);
+  overflow: hidden;
+  background: var(--ao-surface-white);
+  color: var(--ao-text-primary);
+}
+
+.ao-stack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 320px;
+}
+
+.ao-stack--center {
+  align-items: center;
+  text-align: center;
+}
+
+.ao-stack--200 {
+  gap: var(--ao-space-200);
+}
+
+.ao-stack--300 {
+  gap: var(--ao-space-300);
+}
+
+.ao-stack--400 {
+  gap: var(--ao-space-400);
+}
+
+.ao-location-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 240px;
+  height: 240px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.ao-location-glow img {
+  position: absolute;
+  inset: -41.67%;
+  display: block;
+  width: auto;
+  max-width: none;
+  height: auto;
+}
+
+.ao-location-pin {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.ao-location-pin--searching {
+  width: 156px;
+  height: 156px;
+  overflow: hidden;
+}
+
+.ao-location-pin--granted {
+  width: 104px;
+  height: 104px;
+  overflow: hidden;
+}
+
+.ao-location-pin__ripple {
+  position: absolute;
+  top: 69.49%;
+  bottom: 10.13%;
+  left: calc(50% - 0.55px);
+  width: 119.705px;
+  transform: translateX(-50%);
+}
+
+.ao-location-pin__ripple img,
+.ao-location-pin__marker img,
+.ao-location-pin__granted img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+.ao-location-pin__marker {
+  position: absolute;
+  inset: 0 24.48% 32.44% 20.07%;
+  transform-origin: 50% 100%;
+  animation: pinpoint-bounce 1.5s infinite;
+}
+
+.ao-location-pin--searching .ao-location-pin__ripple {
+  animation: pinpoint-ripple 1.5s infinite;
+}
+
+.ao-location-pin__granted {
+  position: absolute;
+  top: 9.87%;
+  bottom: 10.13%;
+  left: 50%;
+  width: 79.803px;
+  transform: translateX(-50%);
+}
+
+/*
+ * Classic map-pinpoint bounce (the 1.5s / 20px / 0%–50%–100% drop).
+ * Default `ease` pauses at the bottom; cosine also stops there and feels floaty.
+ * Ease-in on the fall + ease-out on the rise keeps impact at the bottom
+ * and zero velocity at the rest pose so the loop does not hitch.
+ */
+@keyframes pinpoint-bounce {
+  0% {
+    transform: translate3d(0, 0, 0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  50% {
+    transform: translate3d(0, 20px, 0);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes pinpoint-ripple {
+  0% {
+    transform: translateX(-50%) scale(0.92);
+    opacity: 0.7;
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  50% {
+    transform: translateX(-50%) scale(1.06);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  100% {
+    transform: translateX(-50%) scale(0.92);
+    opacity: 0.7;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ao-location-pin__marker,
+  .ao-location-pin--searching .ao-location-pin__ripple {
+    animation: none;
+  }
+}
+
+

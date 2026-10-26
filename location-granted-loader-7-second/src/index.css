@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("https://pub-c050457d48794d5bb9ffc2b4649de2c1.r2.dev/Euclid%20Font/EuclidCircularB-Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("https://pub-c050457d48794d5bb9ffc2b4649de2c1.r2.dev/Euclid%20Font/EuclidCircularB-Medium.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("https://pub-c050457d48794d5bb9ffc2b4649de2c1.r2.dev/Euclid%20Font/EuclidCircularB-Semibold.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --spacing: 0.0625rem;
+  --font-sans: "Euclid Circular B", system-ui, sans-serif;
+}
+
+@import "./acko/tokens.css";
+@import "./acko/typography.css";
+@import "./acko/button.css";
+@import "./acko/layout.css";
+
+html,
+body,
+#root {
+  min-height: 100%;
+  font-family: var(--ao-font-family);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  background: var(--ao-surface-white);
+  color: var(--ao-text-primary);
+}

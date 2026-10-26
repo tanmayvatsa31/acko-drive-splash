@@ -2,16 +2,19 @@ import { useEffect, useState } from "react";
 import { INTRO_SPLASH_VISIBLE_MS } from "../constants/introSplash";
 import { AckoDriveIntroSplashScreen } from "./AckoDriveIntroSplashScreen";
 import { AckoDriveSplashScreen } from "./AckoDriveSplashScreen";
+import { LocationGrantedLoaderFlow } from "./LocationGrantedLoaderFlow";
+import { LocationGrantedScreen } from "./LocationGrantedScreen";
+import { SevenSecondLoaderScreen } from "./SevenSecondLoaderScreen";
 
-type ScreenId = "flow" | "intro" | "main";
+type ScreenId =
+  | "location-flow"
+  | "loader"
+  | "granted"
+  | "flow"
+  | "intro"
+  | "main";
 
-const SCREENS: { id: ScreenId; label: string }[] = [
-  { id: "flow", label: "Auto flow" },
-  { id: "intro", label: "Intro splash" },
-  { id: "main", label: "Main splash" },
-];
-
-function AutoFlowPreview() {
+function SplashAutoFlow() {
   const [showMainSplash, setShowMainSplash] = useState(false);
 
   useEffect(() => {
@@ -29,10 +32,31 @@ function AutoFlowPreview() {
   );
 }
 
+function screenFromSearch(): ScreenId {
+  const screen = new URLSearchParams(window.location.search).get("screen");
+  if (
+    screen === "location-flow" ||
+    screen === "loader" ||
+    screen === "granted" ||
+    screen === "flow" ||
+    screen === "intro" ||
+    screen === "main"
+  ) {
+    return screen;
+  }
+  return "loader";
+}
+
 function ScreenContent({ screenId }: { screenId: ScreenId }) {
   switch (screenId) {
+    case "location-flow":
+      return <LocationGrantedLoaderFlow />;
+    case "loader":
+      return <SevenSecondLoaderScreen />;
+    case "granted":
+      return <LocationGrantedScreen />;
     case "flow":
-      return <AutoFlowPreview />;
+      return <SplashAutoFlow />;
     case "intro":
       return <AckoDriveIntroSplashScreen />;
     case "main":
@@ -41,33 +65,7 @@ function ScreenContent({ screenId }: { screenId: ScreenId }) {
 }
 
 export function ScreenPreview() {
-  const [activeScreen, setActiveScreen] = useState<ScreenId>("flow");
+  const [screenId] = useState<ScreenId>(screenFromSearch);
 
-  return (
-    <div className="min-h-dvh bg-[#0a0a0a]">
-      <nav
-        aria-label="Screen preview"
-        className="fixed inset-x-0 top-0 z-50 flex flex-wrap items-center justify-center gap-8 border-b border-[#262626] bg-[#141414]/95 px-16 py-10 backdrop-blur-sm"
-      >
-        {SCREENS.map((screen) => (
-          <button
-            key={screen.id}
-            type="button"
-            onClick={() => setActiveScreen(screen.id)}
-            className={`rounded-full px-14 py-6 text-[13px] leading-none transition-colors ${
-              activeScreen === screen.id
-                ? "bg-white text-black"
-                : "bg-[#262626] text-[#d4d4d4] hover:bg-[#404040]"
-            }`}
-          >
-            {screen.label}
-          </button>
-        ))}
-      </nav>
-
-      <div className="flex min-h-dvh items-center justify-center px-16 py-24 pt-[56px]">
-        <ScreenContent screenId={activeScreen} />
-      </div>
-    </div>
-  );
+  return <ScreenContent key={screenId} screenId={screenId} />;
 }

@@ -1,0 +1,84 @@
+/**
+ * AO Design System tokens — sourced from Figma library
+ * "AO Design System / Colours" and "AO Design System / text styles"
+ * on ADSC New Booking Flow (yMwMrWWlLlS1LkLAnAb5Vu).
+ *
+ * Layer model: primitive greys → semantic text / surface / border → spacing / type.
+ */
+
+:root,
+[data-theme="light"] {
+  /* Primitive — Onyx / grey scale */
+  --ao-grey-600: #121212;
+  --ao-grey-400: #4b4b4b;
+  --ao-grey-300: #757575;
+  --ao-grey-200: #a3a3a3;
+  --ao-grey-100: #e8e8e8;
+  --ao-white: #ffffff;
+  --ao-purple-600: #522ed5;
+
+  /* Semantic colour roles */
+  --ao-text-primary: var(--ao-grey-600);
+  --ao-text-secondary: var(--ao-grey-400);
+  --ao-text-tertiary: var(--ao-grey-300);
+  --ao-text-disabled: var(--ao-grey-200);
+  --ao-text-invert: var(--ao-white);
+  --ao-text-brand: var(--ao-purple-600);
+  --ao-surface-white: var(--ao-white);
+  --ao-surface-dark: var(--ao-grey-600);
+  --ao-border-default: var(--ao-grey-100);
+
+  /* Spacing — 4px base (AO space-100 … space-600) */
+  --ao-space-100: 4px;
+  --ao-space-200: 8px;
+  --ao-space-300: 12px;
+  --ao-space-400: 16px;
+  --ao-space-500: 20px;
+  --ao-space-600: 24px;
+
+  /* Radii */
+  --ao-radius-md: 8px;
+  --ao-radius-lg: 16px;
+  --ao-radius-xl: 24px;
+  --ao-radius-full: 999px;
+
+  /* Type */
+  --ao-font-family: "Euclid Circular B", system-ui, sans-serif;
+  --ao-font-size-paragraph-xs: 12px;
+  --ao-line-height-paragraph-xs: 16px;
+  --ao-font-size-paragraph-sm: 14px;
+  --ao-line-height-paragraph-sm: 20px;
+  --ao-font-size-paragraph-md: 16px;
+  --ao-line-height-paragraph-md: 24px;
+  --ao-font-size-heading-xs: 16px;
+  --ao-line-height-heading-xs: 24px;
+  --ao-font-size-heading-sm: 20px;
+  --ao-line-height-heading-sm: 28px;
+  --ao-letter-spacing-heading-sm: -0.1px;
+  --ao-font-size-heading-md: 24px;
+  --ao-line-height-heading-md: 32px;
+
+  /* Compatibility aliases used by existing splash screens */
+  --color-text-primary: var(--ao-text-primary);
+  --color-text-secondary: var(--ao-text-secondary);
+  --color-text-tertiary: var(--ao-text-tertiary);
+  --color-text-invert: var(--ao-text-invert);
+  --color-surface: var(--ao-surface-white);
+  --color-card-elevated-bg: var(--ao-surface-white);
+  --grey-800: var(--ao-grey-600);
+  --z-sticky: 100;
+}
+
+[data-theme="dark"] {
+  --ao-text-primary: var(--ao-white);
+  --ao-text-secondary: var(--ao-grey-200);
+  --ao-text-tertiary: var(--ao-grey-200);
+  --ao-text-invert: var(--ao-white);
+  --ao-surface-white: var(--ao-grey-600);
+  --color-text-primary: var(--ao-text-primary);
+  --color-text-secondary: var(--ao-text-secondary);
+  --color-text-tertiary: var(--ao-text-tertiary);
+  --color-text-invert: var(--ao-text-invert);
+  --color-surface: var(--ao-grey-600);
+  --color-card-elevated-bg: var(--ao-white);
+}

@@ -10,16 +10,19 @@ export default defineConfig({
   plugins: [tailwindcss(), react()],
   resolve: {
     alias: {
-      "@acko/button": path.resolve(rootDir, "src/preview-stubs/button.tsx"),
-      "@acko/typography": path.resolve(
-        rootDir,
-        "src/preview-stubs/typography.tsx",
-      ),
+      "@acko/button": path.resolve(rootDir, "src/acko/button.tsx"),
+      "@acko/typography": path.resolve(rootDir, "src/acko/typography.tsx"),
+      "@acko/tokens": path.resolve(rootDir, "src/acko/tokens.css"),
+      "@acko/css": path.resolve(rootDir, "src/acko"),
     },
   },
   server: {
     host: true,
-    port: 5173,
+    port: 5174,
     open: "/",
+    allowedHosts: true,
+    hmr: {
+      overlay: false,
+    },
   },
 });
